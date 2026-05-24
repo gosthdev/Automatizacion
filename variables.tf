@@ -13,5 +13,11 @@ variable "aws_region" {
 variable "rekognition_collection_id" {
   description = "ID de la colección de Rekognition"
   type        = string
-  default     = "colegio-narvaez-collection"
+  default     = "school-narvaez-collection"
+}
+
+variable "cognito_user_pool_name" {
+  description = "Nombre del User Pool de Cognito"
+  type        = string
+  default     = "school-narvaez-user-pool"
 }

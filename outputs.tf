@@ -1,12 +1,12 @@
 
-output "n8n_aws_access_key_id" {
-  value       = aws_iam_access_key.n8n_rekognition_key.id
+output "aws_access_key_id" {
+  value       = aws_iam_access_key.rekognition_key.id
   description = "Access Key ID para configurar en n8n"
   sensitive   = false
 }
 
-output "n8n_aws_secret_access_key" {
-  value       = aws_iam_access_key.n8n_rekognition_key.secret
+output "aws_secret_access_key" {
+  value       = aws_iam_access_key.rekognition_key.secret
   description = "Secret Access Key para configurar en n8n"
   sensitive   = true
 }

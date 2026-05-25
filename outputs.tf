@@ -1,3 +1,8 @@
+output "environment" {
+  value       = local.environment
+  description = "Current workspace environment"
+}
+
 output "aws_access_key_id" {
   value       = aws_iam_access_key.rekognition_key.id
   description = "Access Key ID para configurar en n8n"
@@ -19,7 +24,8 @@ output "cognito_user_pool_id" {
   value       = aws_cognito_user_pool.pool.id
   description = "ID del User Pool de Cognito"
 }
+
 output "cognito_pool_client_id" {
   value       = aws_cognito_user_pool_client.frontend_client.id
-  description = "ID del User Pool de Cognito"
+  description = "ID del User Pool Client de Cognito"
 }

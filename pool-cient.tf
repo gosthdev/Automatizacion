@@ -1,5 +1,5 @@
 resource "aws_cognito_user_pool_client" "frontend_client" {
-  name         = "frontend-client"
+  name         = "${local.prefix}-frontend-client"
   user_pool_id = aws_cognito_user_pool.pool.id
 
   generate_secret = false

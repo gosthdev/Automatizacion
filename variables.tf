@@ -10,14 +10,13 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "rekognition_collection_id" {
-  description = "ID de la colección de Rekognition"
+variable "project_name" {
+  description = "Base project name used in resource naming"
   type        = string
-  default     = "school-narvaez-collection"
+  default     = "school-narvaez"
 }
 
-variable "cognito_user_pool_name" {
-  description = "Nombre del User Pool de Cognito"
-  type        = string
-  default     = "school-narvaez-user-pool"
+locals {
+  environment = terraform.workspace
+  prefix      = "${var.project_name}-${local.environment}"
 }

@@ -1,6 +1,7 @@
 resource "aws_rekognition_collection" "asistencia" {
-  collection_id = var.rekognition_collection_id
+  collection_id = "${local.prefix}-collection"
   tags = {
-    Name = "AsistenciaBiometrica"
+    Name        = "AsistenciaBiometrica"
+    Environment = local.environment
   }
 }

@@ -1,5 +1,5 @@
 resource "aws_iam_user" "rekognition_user" {
-  name = "n8n-rekognition-service-user"
+  name = "${local.prefix}-rekognition-user"
   path = "/service-accounts/"
 }
 

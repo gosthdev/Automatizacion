@@ -20,6 +20,11 @@ output "rekognition_collection_arn" {
   description = "ARN de la colección de Rekognition creada"
 }
 
+output "rekognition_collection_id" {
+  value       = aws_rekognition_collection.asistencia.collection_id
+  description = "ID de la colección de Rekognition"
+}
+
 output "cognito_user_pool_id" {
   value       = aws_cognito_user_pool.pool.id
   description = "ID del User Pool de Cognito"
@@ -28,4 +33,16 @@ output "cognito_user_pool_id" {
 output "cognito_pool_client_id" {
   value       = aws_cognito_user_pool_client.frontend_client.id
   description = "ID del User Pool Client de Cognito"
+}
+
+output "cognito_access_key_id" {
+  value       = aws_iam_access_key.cognito_key.id
+  description = "Cognito Access Key ID para admin commands"
+  sensitive   = false
+}
+
+output "cognito_secret_access_key" {
+  value       = aws_iam_access_key.cognito_key.secret
+  description = "Cognito Secret Access Key para admin commands"
+  sensitive   = true
 }
